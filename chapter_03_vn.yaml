@@ -1,0 +1,574 @@
+
+#------ Day 3 -------
+
+- background: bg_livingroom                   #หน้าร้าน
+- music: bgm_vn_relaxing_loop
+- msg: เข้าสู่เช้าวันที่สาม เมื่อวานพวกคุณวุ่นวายอยู่กับการยกของและตกแต่งบ้านหลังใหม่
+  character: default
+- msg: แม้เด็กแฝดจะเล่นเป็นซะส่วนใหญ่ แต่สุดท้ายทุกอย่างก็สามารผ่านไปได้
+  character: default
+- msg: วันนี้เป็นวันเปิดร้านดอกไม้วันแรก คุณรู้สึกตื่นเต้นอย่างบอกไม่ถูก
+  character: default
+- msg: ส่วนเมื่อวาน...
+  character: default
+- choice:
+    - msg: คุณอ่านหนังสือเกี่ยวกับดอกไม้ทั้งคืน
+      update:
+        - var_knowledge_score += 2
+        - var_marcus_score += 2
+    - msg: คุณทำความสะอาดทุกซอกทุกมุมภายในบ้าน
+      update:
+        - var_knowledge_score += 1
+        - var_marcus_score += 1
+    - msg: คุณอ่านนิทานให้กับเด็กๆฟัง
+      update:
+        - var_twins_score += 1
+  character: me
+  state: ch3_01
+  
+- background: bg_mc_shop
+- msg: แสงพระอาทิตย์ส่องสว่างจ้า อุณหภูมิโดยรอบนั้นถึงขั้นร้อนอบอ้าว
+  character: default
+- msg: คุณกำลังจัดการกับของภายในร้าน มาร์คัสกำลังขนของเข้าร้าน ส่วนพวกเด็กๆกำลังเล่นกันอยู่ตรงหน้าร้าน
+  character: default
+- msg: พักหนึ่งคุณตัดสินที่จะเดินออกมาจากเคาต์เตอร์เพื่อไปตรวจสอบดอกไม้บริเวณหน้าร้าน
+  character: default
+- msg: คุณได้ยินบทสนทนาของเด็กแฝด แต่ทั้งสองไม่สังเกตุเห็นคุณ
+  character: default
+- character: Ashley_01
+  act: serious
+  position: center
+- msg: วันนี้อากาศร้อนสุดๆ จะละลายแล้ว
+  character: Ashley_01
+- character: Archer_01
+  act: idle
+  position: right
+- msg: โถ่แค่นี้ทำเป็นบ่นไปได้ ถ้าคิดว่ามันเย็นมันก็จะเย็น!
+  character: Archer_01
+- character: Ashley_01
+  act: sigh
+  position: center
+- msg: ........
+  character: Ashley_01
+- character: Archer_01
+  act: idle
+  position: right
+- msg: ดูพี่เป็นตัวอย่าง!!!
+  character: Archer_01
+- msg: เด็กชายยืดอกพร้อมกางแขนอ้าออกเพื่อรับแสงแดด ใบหน้าอวดเก่งกำลังยิ้มร่า
+  character: default
+- msg: แต่ทว่าเหงื่อบนใบหน้าของเด็กชายไหลลงมาจนเห็นได้ชัด
+  character: default
+- msg: แอชลีย์ยืนมองอย่างเอือมระอา ส่วนคุณทำเพียงถอนหายใจอยู่เงียบๆและมองเด็กๆด้วยความเอ็นดู
+  character: default
+- character: Sunny_01
+  act: idle
+  position: left
+- msg: หัวหน้า! ผมมาแล้วครับ!!
+  character: Sunny_01
+- msg: พี่ชาย!
+  character: Archer_and_Ashley
+- msg: ซันนี่กำลังวิ่งเมื่อเขามาหยุดตรงหน้าคุณ เขาก็หอบหายใจเข้าด้วยความเหนื่อย
+  character: default
+- msg: ผ-ผมมาช้าไปรึเปล่าครับ?
+  character: Sunny_01
+- choice:
+    - msg: ไม่เลย กำลังเปิดร้านเลยหล่ะ
+      update:
+        - var_sunny_score += 1
+      goto: ch3_02_nofun
+    - msg: ยังไงดี มาช้าสุดๆ……ล้อเล่นหน่า!
+      update: 
+        - var_sunny_score += 2
+        - var_funny_score += 1
+      goto: ch3_02_fun
+  character: me
+  state: ch3_02
+
+- character: me
+  act: smile
+  position: center
+  label: ch3_02_nofun
+- msg: คุณตอบด้วยรอยยิ้ม ทำให้ซันนี่นั้นคลายสีหน้ากังวล
+  character: default
+- character: Sunny_01
+  act: smile
+  position: left
+- msg: งั้นหรอครับ มีอะไรให้ผมช่วยไหม?
+  character: Sunny_01
+- msg: ตอนนี้ก็ไม่เหลืออะไรมากแล้วหล่ะ
+  character: me
+- character: Sunny_01
+  act: idle
+  position: left
+- msg: งั้นผมจะคอยยืนต้อนรับลูกค้าให้นะครับ!
+  character: Sunny_01
+- msg: ตามบัญชาเลย
+  character: me
+- goto: ch3_fun_con
+
+- character: me
+  act: smile
+  position: center
+  label: ch3_02_fun
+- msg: คุณตอบด้วยน้ำเสียงหยอกล้อพร้อมส่งยิ้มให้อีกคน ซันนี่เห็นเช่นนั้นก็ยิ้มกว้างออกมา
+  character: default
+- character: Sunny_01
+  act: smile
+  position: left
+- msg: งั้นหรอครับ! มีอะไรให้ผมช่วยไหม?!
+  character: Sunny_01
+- goto: ch3_fun_con
+- character: me
+  act: smile
+  position: center
+- msg: ตอนนี้ก็ไม่เหลืออะไรมากแล้วหล่ะ
+  character: me
+- character: Sunny_01
+  act: idle
+  position: left
+- msg: งั้นผมจะคอยยืนต้อนรับลูกค้าให้นะครับ!
+  character: Sunny_01
+- character: me
+  act: smile
+  position: center
+- msg: ได้เลย
+  character: me
+- goto: ch3_fun_con
+
+- character: Ashley_01
+  act: smile
+  position: right
+  label: ch3_fun_con
+- msg: พวกเราขอไปยืนช่วยพี่ชายด้วย!
+  character: Ashley_01
+- character: Sunny_01
+  act: smile
+  position: left
+- msg: รับทราบครับคุณหนู!!
+  character: Sunny_01
+- msg: ซันนี่ยังคงรอยยิ้มแสนร่าเริงไว้ก่อนจะเดินออกไปพร้อมกับเด็กๆ
+  character: default
+- character: empty
+  position: left
+- character: empty
+  position: right
+- msg: เห็นเช่นนั้นคุณก็กลับไปยังเคาน์เตอร์
+  character: default
+- msg: เวลาผ่านไป ลูกค้านั้นก็ยังไม่ค่อยเข้ามามากนัก
+  character: default
+- msg: พวกเด็กๆกับซันนี่นั้นกำลังนั่งหน้าเซ็งอยู่ข้างๆเคาต์เตอร์ ซึ่งทั้งสามนั้นนั่งเชยคางเหมือนนกันอย่างกับแกะ
+  character: default
+- msg: ส่วนมาร์คัสนั้นกำลังตัดกิ่งดอกไม้อย่างขมักเขม้น
+  character: default
+- character: Archer_01
+  act: serious
+  position: right
+- msg: คนไม่ค่อยเข้าร้านเลยอ่ะอาเจ๊
+  character: Archer_01
+- msg: เด็กชายพูดด้วยน้ำเสียงเซ็งๆ
+  character: default
+- character: Marcus_01
+  act: idle
+  position: center
+- msg: พึ่งเปิดร้านวันเเรกเอง อย่าใจร้อนไป
+  character: Marcus_01
+- character: Archer_01
+  act: open
+  position: right
+- msg: ลูกค้าต้องกลัวอาเจ๊จนไม่กล้าเข้าเเน่ๆ
+  character: Archer_01
+- character: Ashley_01
+  act: serious
+  position: center
+- msg: เดี๋ยวเถอะพี่อาร์เชอร์
+  character: Ashley_01
+- character: Sunny_01
+  act: idle
+  position: left
+- msg: ผมว่าผมพอจะรู้วิธีอยู่
+  character: Sunny_01
+- msg: พูดจบซันนี่ก็ลุกพรวดขึ้นมาแล้วเดินไปหามาร์คัส คุณกับพวกเด็กๆก็มองไปที่ซันนี่ด้วยความสงสัย
+  character: default
+- msg: คุณมาร์คัสครับ มาช่วยผมจัดดอกไม้หน้าร้านหน่อยได้รึป่าวครับ?
+  character: Sunny_01
+- character: Marcus_01
+  act: idle
+  position: center
+- msg: อา…ก็ได้?
+  character: Marcus_01
+- msg: น้ำเสียงร่าเริงของซันนี่กำลังทำให้มาร์คัสนั้นทำหน้างงงวย สุดท้ายเขาก็ยอมทำตาม
+  character: default
+- msg: สักพักหนึ่งเสียงผู้หญิงมากมายดังมาจากด้านนอก
+  character: default
+- msg: เมื่อมองออกไปคุณเห็นมาร์คัสที่ตอนนี้ถูกรายล้อมไปด้วยลูกค้าผู้หญิง
+  character: default
+- msg: มาร์คัสเหมือนเขาจะทำอะไรไม่ถูก
+  character: default
+- msg: ผ่านไปไม่นานลูกค้าเริ่มทยอยเข้ามาเรื่อยๆ แม้ส่วนใหญ่จะเป็นผู้หญิงก็ตาม
+  character: default
+- character: Sunny_01
+  act: open_smile
+  position: left
+- msg: มีลูกค้าเข้ามาแล้วหล่ะครับหัวหน้า! สุดยอดไปเลยไหมครับ!
+  character: Sunny_01
+- msg: ซันนี่หันมาหาคุณด้วยท่าทางร่าเริง
+  character: default
+- msg: พี่ชายสุดยอด!!
+  character: Archer_and_Ashley
+- character: me
+  act: happy_smile
+  position: center
+- msg: นายนี่สุดยอดจริงๆ
+  character: me
+- msg: คุณยกนิ้วโป้งให้กับอีกฝ่าย
+  character: default
+- character: empty
+  position: left
+- character: empty
+  position: right
+- msg: ผ่านไปไม่นานลูกค้าเริ่มเยอะขึ้นเรื่อยๆ ซันนี่กำลังรับมือกับลูกค้าหลายคน และมีพวกเด็กๆที่คอยช่วยอยู่ข้างๆ
+  character: default
+- msg: คุณสังเกตุเห็นลูกค้าผู้หญิงคนหนึ่งกำลังมองหาอะไรบางอย่าง ก่อนที่เธอจะเดินมาหาคุณ
+  character: default
+- msg: เอ่อ...ขอโทษนะคะ
+  character: npc_04
+- character: me
+  act: smile
+  position: center
+- msg: คะ?
+  character: me
+- msg: คือว่าฉันต้องการซื้อดอกไม้...เเต่ไม่รู้ว่าควรจะซื้อดอกไม้เเบบไหนดีค่ะ
+  character: npc_04
+- msg: ไม่ทราบว่าจะนำดอกไม้ไปให้ใครในโอกาสอะไรคะ
+  character: me
+- msg: ให้คุณยายที่ป่วยอยู่โรงพยาบาลน่ะค่ะ พอจะมีแนะนำไหมคะ
+  character: npc_04
+- msg: คุณจะรับมือสถานการณ์ตรงหน้าอย่างไร
+  character: default
+- choice:
+    - msg: งั้นเป็นดอกไม้ดอกเป็นไงคะ?
+      goto:
+        - ch3_03_rA_kls2 if var_knowledge_score = 2
+        - ch3_03_rA_kls1 if var_knowledge_score = 1
+        - ch3_03_rA_kls0
+    - msg: ฉันว่าดอกไม้เเบบไหนก็ใช้ได้เหมือนกันนะคะ
+      goto: ch3_03_rB
+  character: me
+  state: ch3_03
+
+
+
+#ch3_03_rA_kls2
+- character: me
+  act: happy_smile
+  position: center
+  label: ch3_03_rA_kls2
+- msg: ลิลลี่สีเหลืองสื่อถึงความห่วงใยเเละการให้กำลังใจค่ะ ผู้ป่วยที่อยู่โรงพยาบาลอาจต้องการคนคอยอยู่เคียงข้างเขานะคะ
+  character: me
+- msg: เมื่อคุณพูดจบ ลูกค้าหญิงยืนเงียบสักพักก่อนที่เธอจะยิ้มออกมา
+  character: default
+- msg: เอาช่อหนึ่งละกันค่ะ
+  character: npc_04
+- msg: รับทราบค่ะ!
+  character: me
+- msg: คุณรีบเดินออกไปเตรียมดอกไม้ ก่อนจะเดินกลับมาพร้อมยื่นช่อดอกไม้และคิดเงินให้กับลูกค้า
+  character: default
+- msg: ขอบคุณที่อุดหนุนนะคะ!
+  character: me
+- msg: ช่อดอกไม้ถูกยื่นให้กับลูกค้าหญิง เธอสูดดมดอกไม้ในมือเบาๆแล้วโค้งขอบคุณ
+  character: default
+- msg: ก่อนที่เธอจะเดินออกจากร้านไป ลูกค้าหญิงหันหลังมาโบกมือบอกลาคุณด้วยรอยยิ้มอ่อนโยน
+  character: default
+- msg: ก่อนที่เธอจะเดินออกจากร้านไป ลูกค้าหญิงหันหลังมาโบกมือบอกลาคุณด้วยรอยยิ้มอ่อนโยน
+  character: default
+- msg: คุณรุ้สึกดีอย่างบอกไม่ถูก ราวกลับว่ายกภูเขาออกจากอก
+  character: default
+- character: Marcus_01
+  act: smile
+  position: right
+- msg: ใช่ได้นิ
+  character: Marcus_01
+- msg: มาร์คัสยืนกอดอกอยู่ข้างเคาต์เตอร์ คุณแอบสะดุ้งเล็กๆเพราะไม่รู้ว่าเขามาตอนไหน
+  character: default
+- msg: แต่มาร์คัสตอนนี้เขากำลังยิ้มอยู่ เขาสบตากับคุณก่อนจะเดินออกไป
+  character: default
+- msg: คุณเเทบหยุดหายใจ รอยยิ้มของอีกฝ่ายทำให้คุณรู้สึกอบอุ่นอย่างน่าประหลาด
+  character: default
+- character: empty
+  position: right
+- msg: เวลาผ่านไป พระอาทิตย์ใกล้จะตกดินส่งสัญญาณบอกว่า ถึงเวลาที่ควรจะกลับไปพักผ่อน
+  character: default
+- msg: ทุกคนช่วยกันเก็บของในร้าน รวมถึงเด็กแฝดเองด้วยเช่นกัน
+  character: default
+- background: bg_f2
+- msg: ขณะนี้คุณกำลังขนของมาเก็บไว้ชั้นสองของบ้าน และตอนนี้คุณอยู่ด้านหน้าประตูห้องเก่าของพ่อคุณ
+  character: default
+- msg: คุณทำงานมาทั้งวันจนลืมคิดเกี่ยวกับห้องนี้ ในห้องนั้นมีหลายอย่างที่ทำให้คุณสงสัย
+  character: default
+- msg: ไม่ว่าจะเป็นกล่องปริศนา จดหมาย และเมือกสีเขียวพวกนั้น มันกำลังกวนใจคุณไม่หยุด
+  character: default
+- goto: ch3_03_r_con
+
+#ch3_03_rA_kls1
+- character: me
+  act: smile
+  position: center
+  label: ch3_03_rA_kls1
+- msg: รอสักครู่นะคะ!
+  character: me
+- character: me
+  act: idle
+  position: center
+- msg: คุณรีบเดินเข้าไปทางหลังร้านเพื่อไปเอาหนังสือที่คุณอ่านค้างไว้ คุณรีบเปิดอ่านหนังสือทีละหน้าจนได้ยินเสียงแผ่นกระดาษกระทบกัน
+  character: default
+- msg: คุณรีบอ่านและออกจากมาจากหลังร้านอย่างรวดเร็ว
+  character: default
+- character: me
+  act: idle
+  position: center
+- msg: ดอกกุหลาบไหมคะ?!
+  character: me
+- msg: ดอกกุหลาบหรอคะ?
+  character: npc_04
+- character: me
+  act: open
+  position: center
+- msg: ดอกกุหลาบสื่อถึงความรักใช่ไหมคะ? มากกว่านั้นดอกกุหลาบยังเป็นยารักษาได้หลายโรค เช่นสามารถ-
+  character: me
+- character: me
+  act: shock
+  position: center
+- msg: งั้นหรอคะ ดอกกุหลาบช่อหนึ่งค่ะ
+  character: npc_04
+- msg: คุณยังพูดไม่จบลูกค้าหญิงก็พูดแทรกขึ้นมา ใบหน้าของเธอยังคงรอยยิ้มไว้
+  character: default
+- character: me
+  act: smile
+  position: center
+- msg: คุณรู้สึกรกะอั่กกระอ่วน แต่คุณก็พยายามฝืนยิ้มและรีบไปเอาช่อดอกไม้
+  character: default
+- msg: เมื่อทุกอย่างเสร็จสิ้น คุณถอนหายด้วยควรมโล่งอก
+  character: default
+- character: Marcus_01
+  act: idle
+  position: right
+- msg: ดูไม่ค่อยได้เลยนะ
+  character: Marcus_01
+- msg: คุณสะดุ้งโหยงกับคำพูดของมาร์คัสที่มายืนตอนไหนคุณก็ไม่รู้
+  character: default
+- msg: พอเหลือบมองไปยังเขา มาร์คัสตอนนี้กำลังทำสีหน้าเรียบเฉย
+  character: default
+- msg: มันทำให้คุณแข็งทื่อ
+  character: default
+- character: Marcus_01
+  act: idle
+  position: right
+- msg: แต่ดีแล้ว ที่เธอพยายาม
+  character: Marcus_01
+- character: empty
+  position: right
+- msg: มาร์คัสพูดจบ เขาก็เดินออกไปไม่พูดอะไรอีก
+  character: default
+- msg: คุณได้เพียงแต่มองหลังของเขาที่เดินจากไป และรู้สึกอบอุ่นกับคำพูดนั้น
+  character: default
+- msg: เวลาผ่านไป พระอาทิตย์ใกล้จะตกดินส่งสัญญาณบอกว่า ถึงเวลาที่ควรจะกลับไปพักผ่อน
+  character: default
+- msg: ทุกคนช่วยกันเก็บของในร้าน รวมถึงเด็กแฝดเองด้วยเช่นกัน
+  character: default
+- background: bg_f2
+- msg: ขณะนี้คุณกำลังขนของมาเก็บไว้ชั้นสองของบ้าน และตอนนี้คุณอยู่ด้านหน้าประตูห้องเก่าของพ่อคุณ
+  character: default
+- msg: คุณทำงานมาทั้งวันจนลืมคิดเกี่ยวกับห้องนี้ ในห้องนั้นมีหลายอย่างที่ทำให้คุณสงสัย
+  character: default
+- msg: ไม่ว่าจะเป็นกล่องปริศนา จดหมาย และเมือกสีเขียวพวกนั้น มันกำลังกวนใจคุณไม่หยุด
+  character: default
+- goto: ch3_03_r_con
+
+#ch3_03_rA_kls0
+- character: me
+  act: worry
+  position: center
+  label: ch3_03_rA_kls0
+- msg: คือว่า เอ่อ……ร้านเราขอแนะนำ
+  character: me
+- msg: คุณพูดตะกุกตะกักและพยายามกวาดสายตามองดอกไม้รอบๆแต่น่าเศร้าที่คุณไม่รู้จักพวกมันเลย
+  character: default
+- msg: ลูกค้าหญิงตรงหน้าก็เอียงศรีษะมองมายังคุณ มันทำให้คุณรู้สึกกดดันขึ้นมา
+  character: default
+- msg: ตอนนี้ในหัวคุณว่างเปล่า คิดอะไรไม่ออก คุณรู้สึกอยากจะวิ่งหนีไป
+  character: default
+- msg: ยังไงหรอคะ?
+  character: npc_04
+- character: Marcus_01
+  act: idle
+  position: right
+- msg: ลูกค้าครับสนใจเป็นลิลลี่สีเหลืองไหมครับ?
+  character: Marcus_01
+- msg: มาร์คัสที่มาจากไหนไม่รู้พูดขึ้นมา ใบหน้าของเขาเผยรอยยิ้มเป็นมิตรให้กับลูกค้า
+  character: default
+- msg: แก้มของเธอขึ้นสีแดงระเรื่อออกมา พยักหน้ารับอย่างเขินอาย
+  character: default
+- msg: ลิลลี่สีเหลืองสื่อถึงความห่วงใยเเละความรักที่มั่นคง เหมือนการให้กำลังใจผู้ป่วยไปในตัวครับ
+  character: Marcus_01
+- msg: งั้นขอช่อหนึ่งค่ะ
+  character: npc_04
+- msg: ลูกค้าตอบอย่างกระตือรือร้น มาร์คัสยิ้มและพยักหน้าเบาๆ
+  character: default
+- msg: สุดท้ายมาร์คัสก็รับมือลูกค้าแทน เธอเดินออกไปพร้อมรอยยิ้ม
+  character: default
+- msg: เมื่อเหลือสองคน คุณสัมผัสได้ว่าบรรยากาศรอบตัวมาร์คัสเปลี่ยนไป
+  character: default
+- msg: เขากลับมาคงหน้าเย็นชาเช่นเดิม
+  character: default
+- msg: ครั้งหน้าฉันจะสอนให้ เธอต้องจำให้ได้ล่ะ
+  character: Marcus_01
+- character: empty
+  position: right
+- msg: เขาพูดด้วยน้ำเสียงนิ่งๆ ก่อนจะเดินจากไป
+  character: default
+- character: me
+  act: idle
+  position: center
+- msg: คุณทำได้เพียงมองแผ่นหลังของเขาเท่านั้น ไม่สามารถอธิบายความรู้สึกใดได้
+  character: default
+- msg: เวลาผ่านไป พระอาทิตย์ใกล้จะตกดินส่งสัญญาณบอกว่า ถึงเวลาที่ควรจะกลับไปพักผ่อน
+  character: default
+- msg: ทุกคนช่วยกันเก็บของในร้าน รวมถึงเด็กแฝดเองด้วยเช่นกัน
+  character: default
+- background: bg_f2
+- msg: ขณะนี้คุณกำลังขนของมาเก็บไว้ชั้นสองของบ้าน และตอนนี้คุณอยู่ด้านหน้าประตูห้องเก่าของพ่อคุณ
+  character: default
+- msg: คุณทำงานมาทั้งวันจนลืมคิดเกี่ยวกับห้องนี้ ในห้องนั้นมีหลายอย่างที่ทำให้คุณสงสัย
+  character: default
+- msg: ไม่ว่าจะเป็นกล่องปริศนา จดหมาย และเมือกสีเขียวพวกนั้น มันกำลังกวนใจคุณไม่หยุด
+  character: default
+- goto: ch3_03_r_con
+
+#ch3_03_rB
+- character: me
+  act: idle
+  position: center
+  label: ch3_03_rB
+- msg: ย...อย่างงั้นหรอคะ
+  character: npc_04
+- msg: บรรยากาศเริ่มตึงขึ้นเล็กน้อย ทำเอาคุณรู้สึกกระอักกระอ่วนขึ้นมา
+  character: default
+- character: Sunny_01
+  act: idle
+  position: left
+- msg: ดอกลิลลี่สีเหลืองเป็นไงครับ
+  character: Sunny_01
+- msg:  น้ำเสียงร่าเริงของซันนี่หันเหความสนใจของลูกค้า
+  character: default
+- msg: ดอกลิลลี่หรอคะ?
+  character: npc_04
+- msg: ใช่ครับ ดอกไม้ที่เหมาะจะไปเยี่ยมผู้ป่วยควรเป็นดอกไม้ที่สดใส เเถมความหมายก็ดีด้วยครับ
+  character: Sunny_01
+- msg: อย่างงี้นี่เอง งั้นฉันขอลิลลี่หนึ่งช่อเเล้วกันนะคะ
+  character: npc_04
+- character: Sunny_01
+  act: big_smile
+  position: left
+- msg: ได้เลยครับ!!
+  character: Sunny_01
+- character: Sunny_01
+  act: idle
+  position: left
+- msg: ทุกอย่างผ่านไปได้ด้วยดี คุณที่ยืนมองทุกอย่างอยู่เงียบๆเกิดรู้สึกผิดขึ้นมา
+  character: default
+- character: Sunny_01
+  act: big_smile
+  position: left
+- msg: ขอบคุณที่อุดหนุนร้านเรานะครับ!
+  character: Sunny_01
+- msg: ซันนี่โค้งขอบคุณอีกฝ่ายเล็กน้อย ลูกค้าหญิงโค้งขอบคุณกลับ แล้วเดินออกจากร้านไป
+  character: default
+- character: me
+  act: open
+  position: center
+- msg: ขอบคุณนะที่ช่วย…
+  character: me
+- msg: ไม่เป็นไรครับ! อย่างงี้ต้องเพิ่มโบนัสผมแล้วหล่ะ!
+  character: Sunny_01
+- msg: ฮ่ะฮะ ผมล้อเล่น งั้นผมขอตัวไปทำงานต่อนะครับ!
+  character: Sunny_01
+- character: empty
+  position: left
+- msg: คุณพยักหน้าตอบกลับ ซันนี่เห็นเช่นนั้นก็ส่งรอยยิ้มมาให้คุณก่อนจะเดินออกไป
+  character: default
+- character: Marcus_01
+  act: idle
+  position: right
+- msg: ".............."
+  character: Marcus_01
+- msg: คุณเหลือบเห็นมาร์คัสที่ยืนดูคุณด้วยสีหน้าเรียบเฉย
+  character: default
+- msg: เมื่อคุณสบตากับเขา มาร์คัสก็รีบหลบสายตาคุณทันที
+  character: default
+- msg: ทำให้คุณรู้สึกแย่อย่างบอกไม่ถูก…
+  character: default
+- character: empty
+  position: right
+- msg: เวลาผ่านไป พระอาทิตย์ใกล้จะตกดินส่งสัญญาณถึงเวลาที่ควรจะกลับไปพักผ่อน
+  character: default
+- msg: ทุกคนช่วยกันเก็บของในร้าน รวมถึงเด็กแฝดทั้งสองก็มาช่วยด้วยเช่นกัน
+  character: default
+- background: bg_f2
+- msg: ตอนนี้คุณนั้นกำลังขนของมาเก็บไว้ชั้นสองของบ้าน และตอนนี้คุณนั้นอยู่ด้านหน้าประตูห้องทำงานเก่าของพ่อคุณ
+  character: default
+- msg: คุณไม่สนใจห้องนี้มากนัก จึงตัดสินใจที่จะเดินเลี่ยงไป
+  character: default
+- goto: ch3_03_r_con
+
+#ch3_03_r_con
+
+- character: me
+  act: shock
+  position: center
+  label: ch3_03_r_con
+- shake: center
+- msg: อี้กกกกกกกก!
+  character: Slime_01
+- msg: คุณสะดุ้งโหยงกับเสียงปริศนาดังออกมาจากห้องตรงหน้า มันดังออกมาเป็นระยะๆ
+  character: default
+- msg: ทันใดนั้นก็มีอะไรบางอย่างคล้ายเมือกสีเขียวลอดออกมาจากทางใต้ประตู
+  character: default
+- msg: ร่างกายของสิ่งนั้นค่อยๆกลับมาหลอมรวมกลายเป็นก้อนสีเขียว
+  character: default
+- msg: อี้กกกกกกกก!
+  character: Slime_01
+- msg: ส-สไลม์?!
+  character: me
+- character: empty
+  position: center
+- msg: —————-
+  character: default
+- background: bg_infront
+- cg: cg_hoho
+- delay: 2
+- msg: นี่นะหรอ ร้านดอกไม้ที่ถูกปิดไปนานแต่กลับมาเปิดใหม่?
+  character: Not_know_Sandrea_01
+- msg: หึ ช่างกล้านักนะ
+  character: Not_know_Sandrea_01
+- msg: คุณหนูคะ เราจะทำยังไงดี!
+  character: npc_of_sandrea_01
+- msg: หึ มันก็แน่อยู่แล้ว
+  character: Not_know_Sandrea_01
+- msg: ใช่ค่ะ แบบนั้น!
+  character: npc_of_sandrea_02
+- msg: แบบไหนหรอ!!
+  character: npc_of_sandrea_01
+- msg: แบบนนั้นแหละ!
+  character: npc_of_sandrea_02
+- msg: เดี๋ยวได้เห็นดีกัน!
+  character: Not_know_Sandrea_01
+- msg:  อะโฮะะะๆๆๆ!!
+  character: Not_know_Sandrea_01
+
+- msg: จบตอน
+  character: default
+
+
+
+#----------- End Day 3 ------------

@@ -1,0 +1,28 @@
+- novel: chapter_01_vn
+  label: chapter_01_vn
+  title: ตอนที่ 1
+
+- goto:
+    - chapter_02_vn_rA if var_sunny_score >= 3
+    - chapter_02_vn_rB
+
+- novel: chapter_02_vn_rA
+  label: chapter_02_vn_rA
+  title: ตอนที่ 2
+
+- novel: chapter_02_vn_rB
+  label: chapter_02_vn_rB
+  title: ตอนที่ 2
+
+- novel: chapter_03_vn
+  label: chapter_03_vn
+  title: ตอนที่ 3
+  cost:
+    type: ticket
+    value: 1
+  to_be_continue: true
+
+- ending:
+    title: จบแบบธรรมดา
+    subtitle: จบแล้วจ้าา
+  label: endinggg

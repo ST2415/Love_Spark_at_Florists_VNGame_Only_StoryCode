@@ -1,0 +1,462 @@
+
+
+#------ Day 2 -------
+
+
+#------ Route B (ไม่รู้จักซั่นนี่) -------
+
+- background: bg_mc_bedroom
+- music: bgm_vn_relaxing_loop
+- msg: เนื่องจากเมื่อวานคุณเล่นกับเด็กๆทั้งคืน ทำให้คุณหลับลึกสนิทจากความเหนื่อยล้า
+  character: default
+- msg: เพราะเด็กๆนั้นมีพลังเกินกว่าที่คุณจะรับไหว
+  character: default
+- msg: คุณจำไม่ได้ว่าเมื่อวานนั้นเกิดอะไรขึ้นบ้าง คุณจำได้เลือนลางว่าคุณต้องเล่านิทานสี่ห้าเรื่องให้เด็กๆฟัง   
+  character: default
+- msg: คุณกำลังหลับฝันอยู่บนเตียงนอน แต่ทันใดนั้นเอง…
+  character: default
+- shake: center
+- sound: door-bell-rings
+- msg: อาเจ๊ ตื่นได้แล้ว!
+  character: Archer_and_Ashley
+- msg: คุณได้ยินเสียงกริ่งปะปนกับเสียงของเด็กชายกำลังปลุกคุณไม่หยุด
+  character: default
+- character: Archer_01
+  act: smile
+  position: left
+- msg: อาเจ๊เร็วเข้า มีลูกน้องอยากเข้าแก๊งอาเจ๊!!
+  character: Archer_01
+- msg: สิ้นเสียงประโยคของอาเชอร์ เสียงของเท้ากระทบพื้นก็ดังไกลออกไป
+  character: default
+- character: me
+  act: idle
+  position: center
+- msg: ตอนนี้คุณมีเพียงความสะลึมสะลือและความสงสัย 
+  character: default
+- msg: คุณรีบไปแต่งตัวเพื่อจะออกไปดูว่าเกิดอะไรขึ้น 
+  character: default
+- sound: door-bell-rings
+- sound: person-knocking
+- msg: เสียงกริ่งและเสียวเคาะประตูดังไม่หยุด เหมือนเป็นสัญญาณบอกให้คุณรีบ
+  character: default
+- msg: ดูท่าจะมีเรื่องด่วนสุดๆ
+  character: default
+- background: bg_infront
+- msg: คุณรีบเปิดประตูทันที่ถึง คนตรงหน้าคุณคือ?
+  character: default
+- character: Sunny_01
+  act: idle
+  position: left
+- msg: ส สวัสดีครับผมชื่อซันนี่!!
+  character: Sunny_01
+- character: Archer_01
+  act: smile
+  position: right
+- msg: ผมตรวจดูหมดแล้ว พี่ชายคนนี้ผมรับประกัน!
+  character: Archer_01
+- character: me
+  act: shock
+  position: center
+- msg: ห้ะ?
+  character: me
+- msg: คุณหันไปมองคนที่ชื่อ ”ซันนี่” ด้วยความมึนงง
+  character: default
+- character: Sunny_01
+  act: smile
+  position: left
+- msg: ผมได้ยินมาว่าคุณกำลังหาลูกน้อง..
+  character: Sunny_01
+- character: Ashley_01
+  act: smile
+  position: right
+- msg: อาเจ๊ต้องมีอัศวินมาปกป้องอาณาจักรนะ!!
+  character: Ashley_01
+- character: me
+  act: idle
+  position: center
+- msg: คุณจะรับมือกับสถานการณ์ตรงหน้าโดย
+  character: default
+- choice:
+    - msg: (ปล่อยให้สถานการณ์นำพาไป)
+      update:
+        - var_routeB += 1
+      goto: ch2_routeB_sa_A
+    - msg: ได้เลย ฉัน{me}ยินดีต้อนรับ!
+      update: 
+        - var_sunny_score += 1
+        - var_routeB += 1
+      goto: ch2_routeB_sa_B
+  character: me
+  state: ch2_routeB_sa
+
+#ch2_routeB_sa_A
+- character: Archer_01
+  act: smile
+  position: right
+  label: ch2_routeB_sa_A
+- msg: พรุ่งนี้พี่ชายก็มาฝึกงานได้เลย!!
+  character: Archer_01
+- character: Ashley_01
+  act: smile
+  position: left
+- msg: ใช่ พี่ชายมาเล่นด้วยกันอีกนะ
+  character: Ashley_01
+- character: Sunny_01
+  act: smile
+  position: left
+- msg: แล้วคุณ?
+  character: Sunny_01
+- character: me
+  act: smile
+  position: center
+- msg: ฉัน{me} ยินดีที่ได้รู้จักนะ ยังไงก็ลองมาก็ได้
+  character: me
+- msg: คุณตอบด้วยความเขินอายด้วยรอยยิ้มฝืนๆ เพราะคุณไม่ถนัดกับการคุยกับคนภายนอกมากนัก
+  character: default
+- goto: ch2_routeB_sa_A_con
+
+
+#ch2_routeB_sa_B
+
+- character: Sunny_01
+  act: smile
+  position: left
+  label: ch2_routeB_sa_B
+- msg: จริงหรอครับ ขอบคุณนะครับ!! 
+  character: Sunny_01
+- character: Sunny_01
+  act: stare_down
+  position: left
+- msg: ผ-ผมคิดว่าจะไม่มีงานทำแล้วสะอีก!!
+  character: Sunny_01
+- msg: ซันนี่พูดด้วยความรู้สึกซาบซึ้งจนคุณสัมผัสได้
+  character: default
+- character: Not_know_Algus_01
+  act: idle
+  position: right
+- msg: ซันนี่กลับกันได้แล้ว
+  character: Not_know_Algus_01
+- character: Sunny_01
+  act: shock
+  position: left
+- msg: ทันใดนั้นเสียงของใครบางคนตะโกนเรียกชื่อของซันนี่
+  character: default
+- character: me
+  act: idle
+  position: center
+- msg: เขาคนนั้นๆเดินเข้ามาใกล้จนคุณเห็นเขาได้ชัดมากขึ้น
+  character: default
+- character: Sunny_01
+  act: open_smile
+  position: left
+- msg: งั้นผมไปก่อนนะครับคุณหัวหน้า!
+  character: Sunny_01
+- msg: ล-และก็นี่เบอร์ติดต่อผมนะครับ!!
+  character: Sunny_01
+- character: empty
+  position: left
+- msg: เขายื่นกระดาษให้คุณ คุณพยักหน้าพร้อมรับ แล้วอีกฝ่ายก็วิ่งออกไปอย่างร่าเริง
+  character: default
+- msg: คุณมองบุคคลปริศนาที่ยืนรอซันนี่ด้วยความรู้คุ้นเคยอย่างประหลาด 
+  character: default
+- character: empty
+  position: right
+- msg: เหมือนกลับว่าคุณเคยเห็นเขาจากที่ไหน แต่คุณกลับคิดไม่ออก
+  character: default
+- goto: ch2_routeB_sa_B_con
+
+# bA
+- msg: คุณกลับเข้าไปในบ้านเมื่อทั้งสองคนเดินหายไปจากสายตาของคุณ
+  character: default
+  label: ch2_routeB_sa_A_con
+- character: empty
+  position: right
+- character: empty
+  position: left
+- background: bg_livingroom
+- msg: ตอนนี้นั้นมีเพียงคุณ ดูเหมือนว่าเด็กๆกับมาร์คัสจะออกไปด้านนอกตั้งแต่เช้า
+  character: default
+- goto: ch2_route_con
+
+# bB
+- msg: หลังจากที่ซันนี่เดินออกไปจากสายตาของคุณ
+  character: default
+  label: ch2_routeB_sa_B_con
+- character: empty
+  position: right
+- character: empty
+  position: left
+- background: bg_livingroom
+- msg: เด็กๆทั้งสองบอกกับคุณว่าพวกเขานั้นจะออกไปเดินเล่นรอบๆหมู่บ้าน
+  character: default
+- msg: คุณตอบรับพวกเขาอย่างช่วยไม่ได้และดูเหมือนว่ามาร์คัสจะออกไปด้านนอกตั้งแต่เช้าแล้ว
+  character: default
+- goto: ch2_route_con
+
+- character: me
+  act: idle
+  position: center
+  label: ch2_route_con
+- msg: คุณจึงตัดสินใจที่จะสำรวจภายในบ้านในขณะที่รอรถขนของมาถึง
+  character: default
+- msg: บ้านหลังนี้ถูกทิ้งร้างไว้นาน มาร์คัสบอกว่าตอนแรกที่เขามาถึงฝุ่นและยากไย้เกาะทั่วเพดานแต่สภาพโดยรวมไม่แย่มากนัก 
+  character: default
+- msg: ถึงอย่างนั้นมาร์คัสพี่ชายของคุณที่รักความสะอาด ก็สามารถทำให้ร้านและบ้านหลังใหม่ดูดีขึ้นทันตาเห็น
+  character: default
+- msg: คุณเดินไปรอบๆ เพื่อชื่นชมสิ่งต่างๆ
+  character: default
+- sound: indoor-footsteps
+- background: bg_f2
+- msg: จนกระทั่งคุณมาถึงชั้นที่สองของบ้าน คุณกลับเห็นห้องหนึ่งถูกล๊อคไว้อย่างหนาแน่น
+  character: default
+- msg: คุณตัดสินใจที่จะ
+  character: default
+- choice:
+    - msg: เปิดสิ! ด้านในอาจจะมีอะไรน่าสนใจ
+      update:
+        - var_suspicious_score += 2
+      goto: ch2_dadroom_A
+    - msg: ไม่เปิด ห้องล๊อคไว้แบบนี้ เจ้าของคงไม่ชอบให้ใครมายุ่ง!
+      update:
+        - var_suspicious_score += 1
+      goto: ch2_dadroom_B
+  character: me
+  state: ch2_B
+
+#ch2_dadroom_A
+
+- msg: คุณรีบเดินเข้าไปหาประตูนั้นอย่าวไม่ลังเล และได้เอาพวงกุญแจขึ้นมาไขทีละดอก
+  character: default
+  label: ch2_dadroom_A
+- msg: ผ่านไปไม่นานประตูก็เปิดออก
+  character: default
+- background: bg_dad_room
+- msg: อี้กก!!!
+  character: Slime_01
+- character: me
+  act: shock
+  position: center
+- msg: เสียงอะไรหน่ะ?!
+  character: me
+- msg: คุณหันไปแหล่งกำเนิดเสียงประหลาดนั้น
+  character: default
+- msg: แต่มันกลับไม่มีอะไร..
+  character: default
+- msg: "ฉันหูฝาดหรอ?"
+  character: me
+- msg: คุณเดินไปหาที่มาของเสียงนั้นอย่างช้าๆ ตอนนี้คุณได้ยินเสียงหัวใจเต้นดังอยู่ในอก
+  character: default
+- msg: คุณพบกับกล่องที่วางอยู่บนโต๊ะทำงาน
+  character: default
+- msg: มากกว่านั้นบนโต๊ะนั้นมีกระดาษมากมายกระจัดกระจายเต็มไปหมด
+  character: default
+- msg: คุณมองเข้าไปใกล้ๆก็พบกับเมือกสีเขียวประหลาดเปรอะเปื้อนไปทั่วบริเวณ
+  character: default
+- character: me
+  act: shock
+  position: center
+- msg: เมื่อสังเกตุดีๆแล้ว กระดาษพวกนั้นปรากฎให้ข้อความที่เขียนไม่จบประโยคกระจายทั่วโต๊ะ
+  character: default
+- msg: ‘สวัสดีฉัน…’ ‘สบายดีไหม’ ‘เป็นอย่างไรบ้าง’
+  character: default
+- msg: ส่วนใหญ่จะเป็นข้อความที่ดูเหมือนผู้เขียนอยากจะเขียนแนะนำตัว 
+  character: default
+- msg: จนกระทั่งสายตาของคุณก็ไปพบกับกระดาษหนึ่งที่โดดเด่นที่สุด
+  character: default
+- image: mcg_hbd
+- delay: 1
+- msg: ‘สุขสันต์วันเกิด’
+  character: default
+- msg: ลายมือมันแตกต่างออกไปจากกระดาษอื่นๆ มีรูปวาดน่ารักตกแต่งโดยรอบ
+  character: default
+- msg: แต่ลายมือนั้นมันเหมือนกับลายมือในจดหมายที่คุณ ได้มาทุกๆวันเกิด…
+  character: default
+- msg: ใจของคุณเริ่มเต้นดังมากกว่าเก่า
+  character: default
+- image: empty
+- character: me
+  act: worry
+  position: center
+- msg: อะไรกัน…แล้วทำไมมันถึงมาอยู่นี้?
+  character: me
+- image: mcg_box
+- delay: 1
+- msg: คุณมองกล่องปริศนาตรงหน้าที่เปรอะเปื้อนไปด้วยเมือกสีเขียว
+  character: default
+- msg: แต่ทว่ามันถูกปิดผนึกไว้คุณต้องใช้กุญแจในการเปิด
+  character: default
+- msg: คุณสำรวจกล่องและพยายามหากุญแจอยู่นานแต่หาเท่าไหร่คุณก็หาไม่เจอ
+  character: default
+- image: empty
+- msg: อาเจ๊มากินข้าวได้แล้ววว ไม่มาพี่มาร์คัสจะไม่ให้ผมกินข้าวว
+  character: Archer_01
+- shake: me
+- msg: อาเชอร์!!
+  character: Marcus_01
+- msg: เสียงของอาเชอร์ดังมาจากทางด้านนอก ทำให้คุณหยุดการกระทำทั้งหมด
+  character: default
+- character: me
+  act: open
+  position: center
+- msg: อาเจ๊มาแล้วๆ!
+  character: me
+- msg: คุณรีบเดินออกจากห้องเพื่อไม่ให้ผิดสังเกตุพร้อมล็อกประตูอย่างลวกๆ
+  character: default
+- msg: ด้วยเหตุผลบางอย่างคุณอยากเก็บเรื่องพวกนี้ไว้คนเดียว
+  character: default
+- background: bg_livingroom
+- character: me
+  act: idle
+  position: center
+- msg: คุณรีบเข้าไปนั่งบนเก้าอี้ตรงข้ามกับเด็กแฝดทั้งสอง
+  character: default
+- msg: มาร์คัสถอดผ้ากันเปื้อนแล้วเดินมานั่งเก้าอี้ข้างๆคุณ
+  character: default
+- goto: ch2_03_food
+
+#----- ch2_dadroom_B -----
+
+- msg: คุณตัดสินใจที่จะไม่สนใจะห้องนี้ เพราะคุณคิดว่ามันไม่สมควรนักที่จะทำแบบนี้
+  character: default
+  label: ch2_dadroom_B
+- msg: เช่นนั้นคุณจึงเดินลงไปชั้นล่างเพื่อไปจัดการกับสิ่งอื่น
+  character: default
+- background: bg_livingroom
+- msg: เมื่อคุณมาถึงชั้นล่าง คุณได้กลิ่นหอมของบางอย่างลอยออกมา
+  character: default
+- msg: คุณเดินตามกลิ่นนั้นไปห้องครัว
+  character: default
+- cg: cg_cooking
+- delay: 2
+- msg: เขาใส่ผ้ากันเปื้อนที่คุณซื้อให้ในวันเกิด สภาพของมันมีรอยขีดเขียนมากมาย
+  character: default
+- msg: เพราะเด็กๆอาสาไปตกแต่งให้
+  character: default
+- msg: ถึงอย่างนั้น มาร์คัสก็ไม่ว่าอะไร แถมรอยขีดเขียนพวกนั้นยังคงอยู่มาจนถึงตอนนี้
+  character: default
+- msg: มาร์คัสจดจ่อกับการทำอาหารไม่แม้แต่ละสายตาไปทางไหน 
+  character: default
+- msg: แต่คุณสัมผัสได้ว่ามาร์คัสนั้นเห็นคุณเข้าเรียบร้อยแล้ว
+  character: default
+- msg: เสียงกระทบของเหล็กและเสียงน้ำมันดังก้องออกมา การเคลื่อนไหวของมาร์คัสดูชำนาญสุดๆ 
+  character: default
+- msg: คุณแอบมองอยู่สักพัก อาหารทุกอย่างถูกจัดวางไว้บนโต๊ะเรียบร้อยโดยฝีมือเด็กๆ
+  character: default
+- cg: empty
+- character: Marcus_01
+  act: idle
+  position: right
+- msg: อาหารเรียบร้อยแล้ว เข้ามาได้เลย
+  character: Marcus_01
+- msg: คุณสะดุ้งเฮือก ก่อนจะพยักหน้ารับแล้วเข้ามานั่งข้างๆมาร์คัสโดยมีเด็กแฝดนั่งอยู่ตรงข้าม
+  character: default
+- goto: ch2_03_food
+
+- msg: การรับประทานอาหารก็ดำเนินไป
+  character: default
+  label: ch2_03_food
+- character: Archer_01
+  act: smile
+  position: left
+- msg: ลูกพี่ อาเจ๊หาลูกน้องได้ด้วย!!
+  character: Archer_01
+- character: Marcus_01
+  act: idle
+  position: center
+- msg: หือ?
+  character: Marcus_01
+- msg: มาร์คัสเลิกคิ้วด้วยความสงสัย
+  character: default
+- character: Ashley_01
+  act: smile
+  position: right
+- msg: พี่ซันนี่ใจดีมากเลยค่ะ พี่เขาเล่นกับพวกเราด้วยวันนี้
+  character: Ashley_01
+- character: Marcus_01
+  act: idle
+  position: center
+- msg: งั้นหรอ
+  character: Marcus_01
+- msg: มาร์คัสพูดด้วยหน้านิ่งๆ มันทำให้คุณแข็งทื่อ
+  character: default
+- msg: ลูกน้องที่ว่าคืออะไร?
+  character: Marcus_01
+
+#----- เงื่อนไข -----
+
+- goto: 
+    - ch2_02_ms_p23 if var_marcus_score >= 2 and var_sunny_score >= 3
+    - ch2_02_ms_p21 if var_marcus_score >= 1 and var_sunny_score >= 2
+    - ch2_02_ms_p00
+
+#-----------------
+
+- character: me
+  act: happy_smile
+  position: center
+  label: ch2_02_ms_p23
+- msg: ลูกน้องที่ไหนกัน พนักงานร้านต่างหาก!
+  character: me
+- msg: คุณตอบด้วยน้ำเสียงหยอกล้อ ทำให้สีหน้าของมาร์คัสนั้นผ่อนคลายลง
+  character: default
+- goto: ch2_04_con
+
+- character: me
+  act: smile
+  position: center
+  label: ch2_02_ms_p21
+- msg: ไม่หรอกค่ะ เขาแค่มาสมัครงานร้านเรา!
+  character: me
+- msg: คุณตอบอย่างมั่นใจ มาร์คัสพยักหน้ารับแต่ยังคงหน้านิ่งไว้
+  character: default
+- goto: ch2_04_con
+
+- character: me
+  act: idle
+  position: center
+  label: ch2_02_ms_p00
+- msg: ก็พนักงานร้านหน่ะค่ะ…
+  character: me
+- msg: คุณตอบด้วยน้ำเสียงเบาๆ
+  character: default
+- msg: มาร์คัสนั้นยังคงหน้านิ่งไว้มันทำให้คุณรู้สึกแข็งทื่อกว่าเก่า
+  character: default
+- goto: ch2_04_con
+
+- character: Archer_01
+  act: smile
+  position: left
+  label: ch2_04_con
+- msg: ต่อจากนี้อาเจ๊คงมีลูกน้องอีกเยอะแน่เลย!!
+  character: Archer_01
+- msg: อาเจ๊จะต้องกลายเป็นมาเฟียประจำหมู่บ้านแน่ๆ
+  character: default
+- character: Ashley_01
+  act: serious
+  position: right
+- msg: ราชินีเถอะ!
+  character: Ashley_01
+- character: Marcus_01
+  act: sulk
+  position: center
+- msg: พี่พึ่งบอกว่าอะไรไปครับ?
+  character: Marcus_01
+- msg: มาร์คัสพูดแทรกออกมาก่อนการถกเถียงจะเริ่มขึ้น!
+  character: default
+- msg: เด็กๆทั้งสองหยุดสิ่งที่จะทำทันทีแล้วหันมายังมาร์คัสด้วยสีหน้ารู้สึกผิด
+  character: default
+- msg: ห้ามทะเลาะกัน ไม่งั้นจะไม่พาไปเที่ยว!
+  character: Marcus_01
+- msg: พูดจบเด็กๆก็หลับไปรับประทานของบนโต๊ะอย่างเรียบร้อย
+  character: default
+- msg: คุณมองอยู่เงียบๆลงมือกินอาหารตรงหน้า แต่ว่านะ‘ไม่พาไปเที่ยว’คืออะไร? 
+  character: default
+- msg: ตอนนี้ไม่เหมาะกับการถามมากนัก คุณได้แค่เพียงสงสัยภายในใจ
+  character: default
+
+- msg: จบตอน
+  character: default
+
+
+
+#----- End Day 2.0

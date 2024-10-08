@@ -1,0 +1,958 @@
+- background: bg_0000
+- music: bgm-tense-sad-piano
+- msg: ในโลกที่เผ่าพันธุ์บ่งบอกถึงฐานะทางสังคม พลัง และเวทมนตร์ของคนๆนั้น หลายคนจึงให้ความสำคัญกับคำว่า “เผ่าพันธุ์” มากกว่าอะไร
+  character: default
+- image: mcg_podium
+- delay: 1
+- msg: ถ้าหากเผ่าพันธุ์ยิ่งหายากเท่าไหร่ โอกาสในสังคมก็จะมากขึ้นเท่านั้น
+  character: default
+- msg: คนในโลกนี้มีสองรูปลักษณ์ ร่างเผ่าพันธุ์และร่าง “Half”
+  character: default
+- msg: คนส่วนใหญ่เลือกที่อยู่ในร่าง half เนื่องจากสามารถใช้ชีวิตประจำวันได้สะดวกกว่า
+  character: default
+- msg: ลองจินตนาการชีวิตด้วยร่างแรก คงลำบากสุดๆ
+  character: default
+- msg: แต่ทว่าตัวฉันนั้นกลับไม่มีสิ่งเหล่านั้น
+  character: default
+- msg: ใช่แล้ว.. ฉันไม่มีเผ่าพันธุ์เหมือนคนอื่นๆ
+  character: default
+- image: empty
+- music: bgm-emotional-piano-sad
+- msg: ฉันอาศัยอยู่กับครอบครัวบุญธรรม
+  character: default
+- msg: ฉันไม่เคยเห็นพ่อและแม่แท้ๆ นอกจากจดหมายหรือของขวัญที่จะถูกส่งมาให้ทุกๆวันเกิด
+  character: default
+- msg: ฉันเคยเขียนจดหมายตอบกลับพวกเขาไปว่าอยากจะเจอพวกเขาสักครั้ง แต่พวกเขาก็ไม่เคยตอบคำถามนั้นกลับมา
+  character: default
+- msg: ครั้งหนึ่งพวกเขาเคยสัญญากับฉันว่าจะมาหา สุดท้ายก็เป็นได้เพียงคำโกหก
+  character: default
+- msg: ไม่นานมานี้คุณพ่อฉันก็ล้มป่วยกระทันหัน และจากไปอย่างสงบ…
+  character: default
+- msg: หลังจากนั้น คุณพ่อเคยทิ้งร้านดอกไม้ในหมู่บ้านเล็กๆแห่งหนึ่ง
+  character: default
+- msg: ใครหลายคนบอกให้พ่อของฉันขายร้านนั้นทิ้ง แต่พ่อก็มักปฎิเสธเสียงแข็งไม่ยอมขายทิ้งแม้จะไม่กลับไปดูแล
+  character: default
+- shake: center
+- msg: เลวร้ายกว่านั้นคือฉันไม่มีงานทำ!!
+  character: default
+- msg: การงานมักพิจารณาจากเผ่าพันธุ์ ทำให้การหางานยิ่งยากมากขึ้นไปอีก บ้านที่อยู่ปัจจุบันกำลังจะถูกยึด
+  character: default
+- msg: ร้านดอกไม้ที่พ่อทิ้งไว้จึงเป็นหนทางสุดท้ายสำหรับตัวฉัน…
+  character: default
+
+
+
+- background: bg_infront
+- music: bgm_vn_relaxing_loop
+- msg: คุณกำลังเดินไปตามทางเดิน ดวงอาทิตย์สะท้อนแสงสีส้มอมเหลืองแสดงถึงยามเย็น
+  character: default
+- msg: พร้อมลมพัดอ่อนๆสัมผัสใบหน้าของคุณทำให้บรรยากาศน่ารื่นรมย์ ตอนนี้คุณมาถึงยังจุดหมายแล้ว
+  character: default
+- character: me
+  act: idle
+  position: center
+- choice:
+    - msg: "ที่นี่ก็ไม่ได้แย่เท่าไหร่…"
+      goto: ch_01_nopunk01
+    - msg: อะไรกันเนี้ย ที่นี่แย่สุดๆเลยนี้!
+      goto: ch_01_nopunk01
+    - msg: เอิ่ม..ขายทิ้งตอนนี้ทันไหมนะ
+      goto: ch_01_punk01
+  character: me
+  state: ch_01_con01
+
+- msg: — คุณเลือกขายร้านทิ้ง คุณนำเงินที่ได้นำไปใช้ และแล้ว—ซะที่ไหนกัน —
+  character: default
+  label: ch_01_punk01
+- goto: ch_01_nopunk01
+- msg: คุณคิดในใจ ตอนนี้คุณพยายามเดินหน้าต่อไปและมองโลกในแง่ดีเท่าที่จะทำได้
+  character: default
+  label: ch_01_nopunk01
+- goto: ch_01_nopunk02
+
+- msg: คุณเหนื่อยล้าจากการเดินทาง แต่ถึงอย่างนั้นคุณก็ไม่อยากปล่อยสัมภาระไว้นอกร้าน
+  character: default
+  label: ch_01_nopunk02
+- character: me
+  act: sigh
+  position: center
+- msg: คุณจึงถอนหายใจอย่างช่วยไม่ได้
+  character: default
+- msg: — มนุษย์ป้าปรากฎตัว!! —
+  character: default
+- character: me
+  act: idle
+  position: center
+- msg: สวัสดีจ่ะ หนูพึ่งย้ายมาใหม่หรอจ้ะ?
+  character: npc_01
+- msg: คุณหันไปหาเจ้าของเสียงจากทางด้านข้างของคุณ
+  character: default
+- msg: อ-เอ่อ...ค่ะ
+  character: me
+- msg: เจ้าของเก่าไม่ยอมขายสักที ป้าหล่ะไม่เข้าใจจริงๆ ถ้าเป็นป้านะ ป้าขายทิ้งไปแล้ว
+  character: npc_01
+- msg: ………
+  character: me
+- msg: ร้านก็เก่า หนูคงมาหาซื้อดอกไม้ใช่ไหม
+  character: npc_01
+- msg: ร้านนี้เขาเลิกขายไปแล้วหล่ะจ่ะ ถึงมาทันตอนร้านนี้ยังเปิดอยู่มันก็ไม่ค่อยเป็นตัวเลือกที่ดีนะป้าว่า
+  character: npc_01
+- choice:
+    - msg: ……ค่ะ
+      goto: ch1_02_marcus_0p
+    - msg: ไม่ใช่อย่างนั้นนะคะ!
+      update:
+        - var_marcus_score += 1
+      goto: ch1_02_marcus_1p
+    - msg: บางทีมารยาทก็เป็นสิ่งสำคัญนะคะ คุณป้า
+      update:
+        - var_marcus_score += 2
+      goto: ch1_02_marcus_2p
+  character: me
+  state: ch_01_con02
+
+
+
+# ch1_02_marcus_0p
+- character: me
+  act: worry
+  position: center
+  label: ch1_02_marcus_0p
+- msg: คุณป้ายังหัวเราะคิกคักต่อไป คุณแสดงสีหน้าหนักใจและไม่กล้าตอบโต้
+  character: default
+- msg: ทันใดนั้นคุณก็ได้ยินเสียงเท้ากระทบพื้นมาจากทางด้านหลัง จังหวะของเสียงนั้นทำให้คุณรู้ได้ทันทีว่าบุคคลนั้นคือใคร
+  character: default
+- character: Marcus_02
+  act: angry
+  position: right
+- msg: ขอโทษนะครับคุณป้า ไม่ทราบว่ามีปัญหาอะไรครับ?
+  character: Marcus_02
+- msg: คนๆนั้นคือพี่ชายขอบคุณ “มาร์คัส”
+  character: default
+- msg: คุณป้าค่อนข้างตกใจมองชายที่เดินเข้ามา มาร์คัสนั้นมองเธอราวกลับว่าทิ่มแทงทะลุเข้าไป
+  character: default
+- msg: คุณป้ารู้ได้ทันทีว่าอีกฝ่ายนั้นมีลำดับเผ่าสูงกว่า เธอจึงหน้าซีดทันที
+  character: default
+- msg: เธอหัวเราะแห้งๆก่อนจะเดินหนีออกไปทันท
+  character: default
+- msg: เมื่อมาร์คัสเดินมาข้างๆคุณ เขามองคุณด้วยสายตาเย็นชา ทำให้คุณความรู้สึกกลัวประหลาด
+  character: default
+- character: Marcus_01
+  act: angry
+  position: right
+- msg: เธอคงชอบโดนดูถูกมากเลยสินะ
+  character: Marcus_01
+- character: empty
+  position: right
+- msg: มาร์คัสพูดจบแล้วเดินออกไป ไม่แม้แต่จะหันมาดูคุณ
+  character: default
+- character: me
+  act: worry
+  position: center
+- msg: เหมือนกับว่าคุณทำให้เขาอารมณ์ไม่ดีไปเสียแล้ว…
+  character: default
+- goto: 
+    - ch1_con_marcus01 if var_marcus_score > 0
+    - ch1_02_marcus_0p_con
+
+# ch1_02_marcus_1p
+- character: me
+  act: angry
+  position: center
+  label: ch1_02_marcus_1p
+- msg: บรรยากาศขณะนี้ถูดปกคลุมด้วยความเงียบ คุณป้ามองคุณด้วยสีหน้าประหลาดใจ
+  character: default
+- msg: เธอหมายถึงอะไร?
+  character: npc_01
+- character: Marcus_02
+  act: angry
+  position: right
+- msg: ก็หมายถึงอย่างนั้นครับ ถ้าไม่ได้มีธุระอะไร ได้โปรดกลับไปที่ๆของคุณเถอะครับ
+  character: Marcus_02
+- msg: พี่ชายของคุณ “มาร์คัส” ปรากฎตัวออกมาจากทางด้านหลัง
+  character: default
+- msg: เขาพูดด้วยน้ำเสียงเย็นชาแฝงไปด้วยแรงอาฆาต
+  character: default
+- msg: คุณป้าสะอึกเล็กน้อยพยายามจะโต้ตอบแต่ทว่ารังสีของมาร์คัสกำลังกดดันตัวเธออยู่
+  character: default
+- msg: เธอจึงเดินออกไปด้วยความไม่พอใจ
+  character: default
+- character: Marcus_01
+  act: idle
+  position: right
+- msg: มาร์คัสมองคุณด้วยสีหน้าเรียบเฉย
+  character: default
+- msg: เธอไม่ต้องกลัวไป เธอยังมีฉันอยู่ข้างเสมอนะรู้ไหม
+  character: Marcus_01
+- character: empty
+  position: right
+- msg: เมื่อเขาพูดจบ เขาก็เดินออกไป
+  character: default
+- character: me
+  act: idle
+  position: center
+- msg: ปล่อยคุณยืนอยู่ตรงนั้น
+  character: default
+- goto: 
+    - ch1_con_marcus01 if var_marcus_score > 0
+    - ch1_02_marcus_0p_con
+
+# ch1_02_marcus_2p
+- character: me
+  act: angry_smile
+  position: center
+  label: ch1_02_marcus_2p
+- msg: คุณป้าหยุดชะงักเพราะคำพูดของคุณ พร้อมแสดงหน้าตาไม่พอใจ
+  character: default
+- msg: นี่เธอพูดอะไรของเธอนังหนู!!
+  character: npc_01
+- msg: ขอโทษทีนะคะ แต่ว่าเจ้าของร้านยืนอยู่ตรงนี้ค่ะ ทำไมจู่ๆถึงมาพูดว่าร้ายให้ฟังเฉยเลยหล่ะค่ะ?
+  character: me
+- msg: ฉันแค่พูดตามความจริง เธอรับไม่ได้ใช่ไหม?
+  character: npc_01
+- msg: คุณป้าพูดด้วยน้ำเสียงเยาะเย้ย สายตาของเธอมองตัวคุณหัวจรดเท้า
+  character: default
+- msg: อ้องั้นหรอคะ ถึงใช่ไม่ใช่มันสมควรมาพูดอย่างนี้หรอคะ? มารยาทที่ดีจากคุณมันเป็นแบบนี้หรอคะ?
+  character: me
+- msg: งั้นฉันจะบอกให้ทุกคนไม่มาเหยียบที่นี่!!
+  character: npc_01
+- character: me
+  act: smile
+  position: center
+- msg: เชิญเลยค่ะ มันจะเป็นผลดีกับทางร้านเหมือนกัน
+  character: me
+- character: me
+  act: foxy
+  position: center
+- msg: เธอจึงเดินออกไปด้วยท่าทางฟึดฟัด
+  character: default
+- msg: คุณเผยยิ้มออกมาด้วยความรู้สึกของชัยชนะ
+  character: default
+- character: me
+  act: shock
+  position: center
+- msg: กึก..
+  character: default
+- msg: เสียงบางอย่างดังมาจากทางด้านหลัง
+  character: default
+- character: Marcus_01
+  act: shock
+  position: right
+- msg: คุณจึงหันไปพบกับพี่ชายของคุณ“มาร์คัส”กำลังทำหน้าอึ้ง
+  character: default
+- msg: ……………
+  character: Marcus_01
+- character: me
+  act: idle
+  position: center
+- msg: ……………
+  character: me
+- character: Marcus_01
+  act: smile
+  position: right
+- msg: ไม่คิดว่าจะเจออะไรแบบนี้ เธอเนี้ยทำเรื่องให้ประหลาดใจตลอดเลย
+  character: Marcus_01
+- msg: ……
+  character: me
+- msg: ฮะฮ่ะ ฉันชอบนะ
+  character: Marcus_01
+- character: empty
+  position: right
+- msg: มาร์คัสพูดจบก็เดินออกไป
+  character: default
+- character: me
+  act: idle
+  position: center
+- msg: ปล่อยตัวคุณไว้อยู่ตรงนั้น
+  character: default
+- goto: 
+    - ch1_con_marcus01 if var_marcus_score > 0
+    - ch1_02_marcus_0p_con
+
+- msg: คุณเดินเข้าไปในบ้านของคุณ แต่ทันใดนั้นคุณก็ได้ยินเสียงที่คุ้นหู เป็นเสียงของเด็กผู้หญิงและผู้ชายซ้อนทับกัน
+  character: default
+  label: ch1_con_marcus01
+- background: bg_livingroom
+- goto: ch1_02_con
+- msg: คุณเดินเข้าไปในบ้านด้วยความรู้สึกแปลกประหลาด แต่ทันใดนั้นก็ได้ยินเสียงที่คุ้นหู มันเป็นเสียงของเด็กผู้หญิงและผู้ชายซ้อนทับกัน
+  character: default
+  label: ch1_02_marcus_0p_con
+- background: bg_livingroom
+- goto: ch1_02_con
+
+- character: me
+  act: idle
+  position: center
+  label: ch1_02_con
+- msg: เด็กทั้งสองกำลังเล่นกัน อาร์เชอร์เล่นเป็นคาวบอย และแอชลีย์เล่นเป็นเจ้าหญิง
+  character: default
+- character: Archer_01
+  act: serious
+  position: left
+- msg: จะบ้าหรอ เธอต่างหากที่ต้องเป็นตัวประกัน!!
+  character: Archer_01
+- character: Ashley_01
+  act: serious
+  position: right
+- msg: นายต่างหากที่ต้องเป็นตัวประกัน คาวบอยอ่อนแอจะตายไป!!
+  character: Ashley_01
+- character: Archer_01
+  act: serious
+  position: left
+- msg: คาวบอยแข็งแกร่งกว่าเจ้าหญิงตั้งเยอะ!!
+  character: Archer_01
+- character: me
+  act: shock
+  position: center
+- msg: เอ่อ…
+  character: me
+- msg: เด็กทั้งสองหยุดเงียบไปสักพัก ก่อนจะหันมาหาคุณ ด้วยสีหน้าดีใจ ดวงตาของทั้งสองส่องประกาย
+  character: default
+- msg: คุณมองเด็กๆด้วยสีหน้าสงสัยและงุนงง พร้อมคิดในใจว่าเด็กทั้งสองเข้ามาได้ยังไง
+  character: default
+- character: Archer_01
+  act: serious
+  position: left
+- msg: อาเจ๊!! ทำไมมาช้าแบบนี้เนี้ย
+  character: Archer_01
+- msg: ทำไมทั้งสองถึงมาอยู่นี้ได้..
+  character: me
+- character: Ashley_01
+  act: smile
+  position: right
+- msg: โรงเรียนของพวกเราหยุดค่ะ! แล้วคุณน้าลอร์ร่าฝากอันนี้มาให้ค่ะ
+  character: Ashley_01
+- msg: เธอยื่นจดหมายให้
+  character: default
+- image: mcg_paper
+- delay: 1
+- msg: — ข้อความภายในจดหมาย —
+  character: default
+- msg: ต้องขอโทษด้วยที่น้าต้องฝากหลานๆไว้ให้ พอดีน้าติดธุระหลายเดือนเลยไม่สามารถดูแลเด็กๆได้
+  character: default
+- msg: งานของน้ามีอะไรต้องทำมากเลยทำให้ไม่มีเวลาเลย ขอให้ธุรกิจไปได้อย่างราบรื่นนะจ้ะ หลานรักของน้า
+  character: default
+- msg: และก็ขอบคุณล่วงหน้าน้าจะส่งของแทนขอบคุณให้อีกสองสามวันนะจ้ะ
+  character: default
+- msg: ด้วยรักจากคุณน้า
+  character: default
+- image: empty      #อันนี้เป็นการลบ mini cg ออก
+- msg: "ขนาดนี้เลยหรอ… กระทันเกินไปไหมเนี่ย"
+  character: me
+- msg: คุณคิดในใจ
+  character: me
+- character: Archer_01
+  act: idle
+  position: left
+- msg: ทำไมบ้านอาเจ๊ถึงได้โล้งโล่ง ขนาดนี้อ่ะครับ?
+  character: Archer_01
+- character: me
+  act: idle
+  position: center
+- msg: เรียกว่ายังไม่ทันได้จัดอะไรเลยต่างหากหล่ะ แล้วก็ดูเหมือนรถขนของจะมาพรุ่งนี้ด้วย…
+  character: me
+- character: empty
+  position: left
+- character: empty
+  position: right
+- msg: คุณจะเลือก...
+  character: default
+- choice:
+    - msg: ออกไปสำรวจด้านนอก
+      goto: ch1_03_outside
+    - msg: ถามเด็กๆว่าอยากทำอะไร
+      goto: ch1_03_inside
+  character: me
+  state: ch_01_con03
+
+# ch1_03_outside
+
+- character: me
+  act: idle
+  position: center
+  label: ch1_03_outside
+- background: bg_outside
+- msg: พอสังเกตุโดยรอบนั้นทุกอย่างมีแต่เพียง ความเงียบและเสียงลมพัดอ่อนๆ แต่ก็มีแสงสว่างนั้นออกมาจากสถานที่หนึ่ง 
+  character: default
+- msg: มันคือร้านเบเกอรี่ กลิ่นของขนมปังที่ลอยอบอวลออกมา ทำให้คุณตัดสินใจเดินเข้าไป..
+  character: default
+- background: bg_cafe
+- sound: bgm-bell-ring
+- music: bgm_vn_relaxing_loop
+- character: Not_know_Sunny_01
+  act: shock
+  position: right
+- msg: เต็มแล้วหรอครับ!!
+  character: Not_know_Sunny_01
+- character: me
+  act: shock
+  position: center
+- msg: คุณสะดุ้งเมื่อได้ยินเสียงของชายหนุ่มตัวเล็กที่ยืนอยู่หน้าเคาต์เตอร์
+  character: default
+- msg: เขาทำท่าคอตกแล้วก็ค่อยๆหันหลังเดินไปนั่ง
+  character: default
+- msg: คุณเดินเข้าไปจนได้ยินเสียงบ่นเบาๆของชายหนุ่ม
+  character: default
+- character: Not_know_Sunny_01
+  act: suffer
+  position: right
+- msg: นี่เป็นที่ที่ห้าแล้วนะ…
+  character: Not_know_Sunny_01
+- msg: สีหน้าของเขาดูเศร้าและรังสีรอบๆนั้นดูหม่นหมองสุดๆ
+  character: default
+- character: empty
+  position: right
+- character: me
+  act: idle
+  position: center
+- msg: "..."
+  character: me
+- msg: คุณมองทุกอย่างอยู่เงียบๆ แล้วเดินเข้าไปข้างในเพื่อสังเกตุภายในร้าน
+  character: default
+- msg: ยินดีต้อนรับ~! เอ…
+  character: npc_02
+- msg: ถ้าจะมาสมัครงานหล่ะก็ ร้านของเราเต็มแล้วหล่ะ
+  character: npc_02
+- msg: คุณได้ยินเช่นนั้นก็ยืนนิ่งกับคำพูดเปรี่ยมด้วยรอยยิ้ม   
+  character: default
+- msg: แต่เมื่อมองรอบๆร้านนั้นคุณสังเกตุเห็นภาพผู้ชาย
+  character: default
+- msg: ใส่ชุดเชิ้ตสีขาว ผมสีน้ำตาลตัดเทาโดยมีชื่อกำกับว่า“อีวาน“
+  character: default
+- msg: รูปมีขนาดสูงกว่าคุณไปครึ่งหัว ยืนเด่นสง่าอยู่หน้าเคาต์เตอร์ 
+  character: default
+- msg: คุณคิดว่าบุคคลนี้อาจจะเป็นคนมีชื่อเสียง แต่น่าเสียดายที่คุณกลับไม่รู้จักคนๆนี้
+  character: default
+- msg: ร้านของเราใกล้ปิดแล้วหล่ะ ค่อยมาพรุ่งนี้นะจ้ะ!
+  character: npc_02
+- msg: คุณเดินถอยหลังออกมา
+  character: default
+- msg: แล้วเหลือบมองชายหนุ่มที่กำลังนั่งหดหู่
+  character: default
+- msg: คุณตัดสินใจที่จะ...
+  character: default
+- choice:
+    - msg: เดินเข้าไปหา
+      update:
+        - var_sunny_score += 3
+      goto: ch1_03_outside_con1
+    - msg: ไม่สนใจ เดินออกจากร้าน
+      goto: ch1_03_outside_con2
+  character: me
+  state: ch_01_con03_sunny
+
+
+
+#---------------เข้าสู่บทออกมาข้างนอก(มีซันนี่)---------------
+
+#ch1_03_outside_con1
+- character: me
+  act: idle
+  position: center
+  label: ch1_03_outside_con1
+- msg: คุณเดินไปหาชายหนุ่ม เมื่อคุณเดินเข้าไปใกล้เขามากขึ้น
+  character: default
+- msg: ชายหนุ่มรู้สึกได้ถึงตัวคุณ เขามองมคุณด้วยความสงสัย
+  character: default
+- msg: สวัสดี ฉันชื่อ{me}          #ใส่ชื่อของผู้เล่น
+  character: me
+- msg: ชายหนุ่มแปลกหน้าได้ยินเช่นนั้นเขาก็ยิ้มตอบรับคุณ รอยยิ้มนั้นเปร่งประกายราวกับดวงอาทิตย์
+  character: default
+- msg: จนคุณรู้สึกใจเต้นชั่วขณะให้กับคนตรงหน้า
+  character: default
+- character: Sunny_01
+  act: open_smile
+  position: right
+- msg: ผมชื่อซันนี่ ยินดีที่ได้รู้จักครับ!!
+  character: Sunny_01
+- msg: ซันนี่ลุกขึ้นยืนตัวตรงพร้อมยื่นมือเพื่อที่จะทักทาย ซึ่งเขาตัวเล็กมากๆเมื่อวัดกับคุณ
+  character: default
+- msg: คุณยิ้มตอบกลับและยื่นมือทักทายมือเล็กๆของอีกฝ่าย
+  character: default
+- character: me
+  act: smile
+  position: center
+- msg: นายกำลังหาที่ทำงานอยู่ใช่ไหม?
+  character: me
+- character: Sunny_01
+  act: shock
+  position: right
+- msg: เอ๋ทำไมถึงรู้หล่ะครับ?!!
+  character: Sunny_01
+- character: me
+  act: smile
+  position: center
+- msg: ก็……ฉันได้ยินนายพึมพำ แล้วก็พอฟังจากเจ้าของร้าน-
+  character: me
+- character: Sunny_01
+  act: sad        #หน้าตาร้องไห้ แบบอิโมจินะ
+  position: right
+- msg: อ่าจริงด้วย… ตอนนี้ผมหน่ะก็หางานไปทั่วแต่ก็หาไม่ได้เลย
+  character: Sunny_01
+- character: Sunny_01
+  act: idle
+  position: right
+- msg: สงสัยผมนะไม่มีงานทำจริงๆ แต่ถึงอย่างนั้นผมก็จะพยายาม!
+  character: Sunny_01
+- character: me
+  act: smile
+  position: center
+- msg: ว่าแต่นายทำอะไรได้บ้างหล่ะ?
+  character: me
+- character: Sunny_01
+  act: idle
+  position: right
+- msg: อ่า ผมทำงานบ้านได้หมดเลย ถูบ้าน กวาดบ้าน ทำกับข้าวผมก็ทำได้นะ
+  character: Sunny_01
+- msg: แล้วก็ๆผมเก่งเรื่องตกปลานะ!!
+  character: Sunny_01
+- character: me
+  act: smile
+  position: center
+- msg: งั้นมาทำงานที่ร้านฉันไหมหล่ะ?
+  character: me
+- character: Sunny_01
+  act: shock
+  position: right
+- msg: ค-ครับ??
+  character: Sunny_01
+- character: me
+  act: smile
+  position: center
+- msg: ฉันถามว่า นายอยากมาทำงานที่ร้านฉันไหม
+  character: me
+- character: Sunny_01
+  act: shock
+  position: right
+- msg: ค-คุณ{me} จะชวนผมไปทำงานหรอครับ!!??   #ใส่ชื่อของผู้เล่น
+  character: Sunny_01
+- character: me
+  act: idle
+  position: center
+- msg: พอดีฉันเพิ่งได้ร้านดอกไม้ที่คุณพ่อทิ้งไว้ให้ จริงๆฉันไม่ค่อยเก่งเรื่องดอกไม้ต้นไม้เท่าไหร่หน่ะ
+  character: me
+- character: Sunny_01
+  act: idle
+  position: right
+- msg: อย่างงี้นี่เอง แต่คุณกับผมเพิ่งรู้จักกันไม่กี่นาทีเองนะครับ…
+  character: Sunny_01
+- character: me
+  act: idle
+  position: center
+- msg: เอ่อ...
+  character: me
+- msg: "นี่ฉันใจร้อนเกินไปใช่ไหม… คุณคิดในใจ"
+  character: me
+- character: Sunny_01
+  act: idle
+  position: right
+- msg: คุณแน่ใจนะครับว่า จะไม่สัมภาษณ์งานหรือทดสอบความสามารถของผมก่อน!? 
+  character: Sunny_01
+- character: me
+  act: idle
+  position: center
+- msg: ………
+  character: me
+- character: Sunny_01
+  act: smile
+  position: right
+- msg: งั้นๆ ผมๆๆๆ
+  character: Sunny_01
+- msg: ซันนี่หยิบโทรศัพท์ออกมาจากกระเป๋ากางเกง สักพักหนึ่งเขาก็ยื่นหน้าจอโทรศัพท์มาตรงหน้าของคุณ
+  character: default
+- msg: เผยให้เห็น ภาพดอกไม้ทานตะวัน
+  character: default
+- image: mcg_sunflower
+- delay: 1
+- msg: ดอกทานตะวัน?
+  character: me
+- msg: ผมปลูกด้วยตัวเอง! จริงๆนะครับ ให้ผมบอกวิธีการปลูกได้นะครับ!!
+  character: Sunny_01
+- msg: อีกฝ่ายนั้นกระตือรือร้นและร้อนรน
+  character: default
+- msg: แต่ใบหน้ายังคงแสดงความมุ่งมั่นออกมา ทำให้คุณรู้สึก…ปฎิเสธไม่ลง
+  character: default
+- msg: แบบนี้ใช้ได้ใช่ไหมครับ หรือจะให้ผมเอาดอกไม้มาเป็นหลักฐานให้!
+  character: Sunny_01
+- image: empty
+- msg: ตอนนี้หัวใจของคุณโดนลูกศรหัวใจปักซ้ำๆ จนจะพรุนไปหมด
+  character: default
+
+#แฝดโผล่มา ช้อยส์นี้เช่นเดิม
+- msg: อาเจ๊!!
+  character: Archer_and_Ashley
+- shake: left
+- msg: คุณสองคนหยุดบทสนทนาแล้วหันไปหาแฝดหญิงชาย
+  character: default
+- character: Archer_01
+  act: serious
+  position: left
+- msg: อาเจ๊แอบออกมาคนเดียว ขี้โกงนี่!!
+  character: Archer_01
+- character: me
+  act: idle
+  position: center
+- msg: ขอโทษที ว่าแต่ทำไมทั้งคู่ถึงมาอยู่ที่นี่ได้ล่ะ
+  character: me
+- character: Ashley_01
+  act: smile
+  position: right
+- msg: พี่มาร์คัสบอกให้อาเจ๊กลับบ้านได้แล้วค่ะ นี่ก็ถึงเวลานอนแล้วด้วย
+  character: Ashley_01
+- msg: คุณมองข้างนอกร้านและสลับหันไปมองเจ้าของร้าน ดูจากบรรยากาศแล้วมันคงจะเกินเวลามาจริงๆ…
+  character: default
+- sound: bgm-bell-ring
+- delay: 1
+- background: bg_outside           #เปลี่ยนฉากเป็นฉากข้างนอก
+- music: bgm_vn_relaxing_loop
+- msg: พวกคุณออกมาจากทันที เด็กแฝดทั้งสองก็มายืนตรงหน้าคุณ
+  character: default
+- msg: เหมือนคุณกลายเป็นผู้ต้องสงสัยที่กำลังถูกสอบสวนอยู่อย่างไงอย่างงั้น
+  character: default
+- character: me
+  act: idle
+  position: center
+- msg: พี่มาร์คัสบอกว่าอะไรบ้างหล่ะ…?
+  character: me
+- character: Archer_01
+  act: serious
+  position: left
+- msg: ไม่ต้องมาคุยกับพวกเราเลยอาเจ๊!!
+  character: Archer_01
+- character: me
+  act: idle
+  position: center
+- msg: ดูท่าพวกเด็กๆจะงอลกันแล้ว ทำยังไงกันดี
+  character: me
+- character: Sunny_01
+  act: sad
+  position: right
+- msg: อันที่จริง นี่ก็เป็นความผิดของผมด้วย..
+  character: Sunny_01
+- character: me
+  act: idle
+  position: center
+- msg: คุณสังเกตุเห็นสีหน้ารู้สึกผิดของซันนี่ ทำให้หัวใจของคุณเจ็บแปร้บอย่างบอกไม่ถูก
+  character: default
+- character: me
+  act: smile
+  position: center
+- msg: ไม่เป็นไรหรอก ฉันมีทางอื่นอยู่
+  character: me
+- msg: คุณยิ้มให้เขาก่อนจะหันไปหาเด็กๆ ที่ตอนนี้หันหน้าหนีไปคนละทิศทาง
+  character: default
+- character: me
+  act: worry
+  position: center
+- msg: อาเจ๊ต้องขอโทษจริงๆ งั้นอาเจ๊จะเล่านิทานสนุกๆก่อนนอนให้ฟัง ได้รึเปล่า?
+  character: me
+- msg: อาเจ๊คิดว่าจะเอานิทานมาล่อพวกเราได้หรอครับ?!
+  character: Archer_01
+- msg: อ่า...ไม่ได้หรอ…?
+  character: me
+- character: Archer_01
+  act: laugh
+  position: left
+- msg: ได้!! แต่อาเจ๊ต้องเล่าเรื่องสนุกๆนะ!!
+  character: Archer_01
+- character: Archer_01
+  act: serious
+  position: left
+- msg: เด็กชายพูดจบแล้วหันไปจ้องเขม็งใส่คนที่ตนไม่รู้จัก
+  character: default
+- character: Sunny_01
+  act: idle
+  position: right
+- msg: ซันนี่ยังคงรอยยิ้มแสนเป็นมิตรนั้นไว้แล้วส่งสายตามาให้คุณ
+  character: default
+- msg: เหมือนกลับว่าเขากำลังบอกว่า ‘ปล่อยให้ผมจัดการเถอะหัวหน้า’ อะไรอย่างงั้น
+  character: default
+- character: Archer_01
+  act: idle
+  position: left
+- msg: คนนี้ใครอ่ะอาเจ๊?
+  character: Archer_01
+- msg: อาเชอร์พูดพร้อมชี้นิ้วไปทางคนข้างๆคุณ
+  character: default
+- character: Sunny_01
+  act: big_smile
+  position: right
+- msg: พี่ชื่อว่าซันนี่ เป็นลูกน้องของ{me}น่ะ!!
+  character: Sunny_01
+- msg: คุณสะดุ้งกับคำพูดที่ซันนี่พูด ตอนนี้ในหัวของคุณนั้นมีคำว่า“ห้ะ”เต็มไปหมด
+  character: default
+- msg: แต่คุณเลือกที่ตะไม่พูดอะไรออกไป
+  character: default
+- character: Archer_01
+  act: shock
+  position: left
+- msg: โห อาเจ๊สุดยอดมาวันแรกอาเจ๊ก็หาลูกน้องได้เลย!!
+  character: Archer_01
+- character: Ashley_01
+  act: curious
+  position: center
+- msg: แล้วพี่ซันนี่จะเล่านิทานอะไรให้ฟังหรอคะ??
+  character: Ashley_01
+- character: Sunny_01
+  act: open_smile
+  position: right
+- msg: แล้วเราอยากฟังเรื่องอะไรกัน
+  character: Sunny_01
+- msg: โจอี้คาวบอยข้ามเวลา!!/เจ้าหญิงเวทย์น้อย!!
+  character: Archer_and_Ashley
+- shake: right
+- character: Sunny_01
+  act: panic
+  position: right
+- msg: ซันนี่ยืนแข็งทื่อ เจ้าตัวคงจะสับสนแบบสุดๆ
+  character: default
+- msg: เพราะไม่รู้ว่าจะรับมือกับเด็กสองคนที่ส่งสายตาวิบวับมาให้อย่างไร
+  character: default
+- character: me
+  act: open
+  position: center
+- msg: งั้นกลับบ้านกันก่อนเถอะ พวกเราคงไม่อยากยืนตัวหนาวเล่านิทานตรงนี้หรอก
+  character: me
+- character: me
+  act: idle
+  position: center
+- msg: ทั้งสามพยักหน้ารัวๆตอบรับคำพูดของคุณ พวกคุณจึงรีบเดินกลับไปบ้านหลังใหม่
+  character: me
+- goto: end_ch1_day1
+
+
+
+#---------------เข้าสู่บทออกมาข้างนอก(ไม่มีซันนี่)---------------
+
+#ch1_03_outside_con2
+- character: me
+  act: idle
+  position: center
+  label: ch1_03_outside_con2
+- msg: คุณรู้สึกว่ามันไม่ใช่ธุระของคุณที่จะเข้าไปยุ่งเกี่ยว
+  character: default
+- msg: คุณเลยหันไปยิ้มจางๆให้กับพนังงานตรงหน้า
+  character: default
+- msg: อ่างั้นหรอคะ น่าเสียดายจัง...
+  character: me
+- msg: โอกาสหน้าเชิญใหม่นะคะ
+  character: npc_02
+- msg: เจ้าของร้านส่งยิ้มหวานให้คุณเหมือนกลับจะบอกเป็นนัยๆ ว่าร้านเรายินดีต้อนรับคุณลูกค้าเสมอ
+  character: default
+- msg: คุณเดินออกจากร้านด้วยความเสียดายเล็กน้อย
+  character: default
+- msg: ที่ไม่ได้ซื้อขนมไปฝากพวกเด็กๆแต่ก็ไม่ได้ทำให้คุณรู้สึกเเย่ขนาดนั้น
+  character: default
+- shake: center
+- msg: อาเจ๊!!!
+  character: Archer_and_Ashley
+- character: me
+  act: shock
+  position: center
+- msg: อ๊ะ!! ทั้งสองคน-
+  character: me
+- character: Archer_01
+  act: serious
+  position: right
+- msg: อาเจ๊ออกมาทำไมไม่บอกผมก่อน
+  character: Archer_01
+- character: me
+  act: open
+  position: center
+- msg: เเล้วทั้งสองคนมีอะไรรึป่าว แล้วทำไมถึงรู้ว่าอาเจ๊อยู่นี่?
+  character: me
+- character: Ashley_01
+  act: foxy
+  position: left
+- msg: พี่มาร์คัสให้มาตามอาเจ๊กลับบ้านได้เเล้วค่ะ ที่รู้ก็พี่มาร์คัสบอกหน่ะค่ะ
+  character: Ashley_01
+- character: me
+  act: idle
+  position: center
+- msg: งั้นหรอ
+  character: me
+- msg: "เอ..เขารู้ได้ยังไง? คุณคิดในใจ"
+  character: me
+- msg: อาเจ๊เองก็กำลังจะกลับพอดี... งั้นเรากลับบ้านด้วยเถอะ
+  character: me
+- msg: ".............."
+  character: Archer_and_Ashley
+- msg: หือ มีอะไรงั้หรอ?
+  character: me
+- character: Archer_01
+  act: serious
+  position: right
+- msg: อาเจ๊ออกมาสนุกคนเดียวไม่ชวนพวกเราเลย ขี้โกงเน้!
+  character: Archer_01
+- character: me
+  act: open
+  position: center
+- msg: เอ่อ…อาเจ๊ขอโทษที
+  character: me
+- character: Archer_01
+  act: serious
+  position: right
+- msg: อาเจ๊ต้องเล่านิทานก่อนนอนขอโทษพวกเรา!!
+  character: Archer_01
+- character: me
+  act: smile
+  position: center
+- msg: เอางั้นหรอ?
+  character: me
+- msg: อาร์เชอร์และเเอชลีย์ พยักหนักรัวๆเพื่อยืนยันประโยคดังกล่าว
+  character: default
+- msg: ถ้างั้นอยากฟังเรื่องอะไรกันดีล่ะ
+  character: me
+- msg: โจอี้คาวบอยข้ามเวลา!!/เจ้าหญิงเวทย์น้อย!!
+  character: Archer_and_Ashley
+- msg: เมื่อสิ้นเสียง เด็กทั้งสองหันมามองหน้ากันทำให้คุณรู้สึกว่าเห็นสายฟ้าฟาดลงมาระหว่างทั้งคู่
+  character: default
+- msg: งั้นกลับบ้านก่อนดีกว่า ค่อยว่ากัน
+  character: me
+- msg: อาเจ๊!!
+  character: Archer_and_Ashley
+- msg: คุณเดินออกไปไม่สนใจเสียงประท้วงของเด็กทั้งสอง
+  character: default
+- msg: กลับกันการทักท้วงของเด็กๆทำให้คุณรู้สึกสนุกอย่างบอกไม่ถูก
+  character: default
+- goto: end_ch1_day1
+
+
+
+#---------------เข้าสู่บทอยู่ข้างใน(ไม่มีซันนี่)---------------
+
+# ch1_03_inside
+- character: me
+  act: idle
+  position: center
+  label: ch1_03_inside
+- msg: วันนี้คงจัดไม่เสร็จ งั้นเรามาพักกันก่อนดีกว่า
+  character: me
+- msg: ทั้งสองอยากทำอะไรหล่ะ?
+  character: me
+- character: Ashley_01
+  act: smile
+  position: right
+- msg: จริงด้วย! วันนี้มีจะมีประกาศวันจัดวงเฮเลียคอล หนูอยากดูๆๆๆ!
+  character: Ashley_01
+- msg: เฮเลียคอล?
+  character: me
+- character: Archer_01
+  act: open
+  position: left
+- msg: เป็นวงที่เเอชลีย์ชอบน่ะอาเจ๊ ไม่รู้ว่ามีอะไรน่าสนใจ #ทำหน้าแหย
+  character: Archer_01
+- character: Ashley_01
+  act: serious
+  position: right
+- msg: เน้!! เฮเลียคอลไม่เหมือนวงอื่นๆนะ เพลงเพราะ แถมหน้าตางดงามไม่มีใครเปรียบได้!!
+  character: Ashley_01
+- msg: พี่อาร์เชอร์เทียบไม่ติดเลยสักนิด
+  character: Ashley_01
+- character: Archer_01
+  act: shock
+  position: left
+- msg: หา!?
+  character: Archer_01
+- character: me
+  act: idle
+  position: center
+- msg: "คงจะชอบมากๆเลยสินะ คุณคิดในใจ"
+  character: me
+- msg: โอเคๆ เลิกทะเลาะได้แล้ว เดี๋ยวก็ไม่ให้ดูหรอก
+  character: me
+- character: Archer_01
+  act: smile
+  position: left
+- msg: ทะเลาะๆๆ
+  character: Archer_01
+- msg: พี่อาร์เชอร์!!
+  character: Ashley_01
+- character: me
+  act: sigh
+  position: center
+- msg: ...
+  character: me
+- msg: พูดจบคุณก็เปิดทีวีไปที่ช่องข่าวให้เเอชลีย์
+  character: default
+- cg: cg_concert
+- delay: 2
+- msg: สวัสดีครับ ไม่นานมานี้วงชื่อดัง ได้รับรางวัลวงยอดเยี่ยมประจำปี
+  character: npc_03
+- msg: และเพลง “ดวงตะวันของฉัน“ ถึงชื่อจะค่อนข้าง...
+  character: npc_03
+- msg: แต่ถึงอย่างนั้นก็ติดอันดับเพลงที่ติดหูใครหลายๆคน
+  character: npc_03
+- msg: คุณ'อีวาน' หัวหน้าวงรู้สึกอย่างไหร่กับความสำเร็จครั้งนี้ครับ?
+  character: npc_03
+- msg: "คงเป็นวงที่ดังน่าดูเลย"
+  character: me
+- msg: "แต่ทำไมฉันถึงไม่รุ้จักนะ เกิดอะไรขึ้นกับข้างนอกบ้างเนี้ย.."
+  character: me
+- msg: รู้สึกดีใจมากครับ ขอบคุณทุกกำลังใจจากแฟนคลับทุกคน
+  character: Evan_01
+- shake: center
+- msg: กรี๊ดดดดดดดดดด!!!
+  character: default
+- msg: ก็นั้นแหละครับ แล้วคอนเสิร์ตที่จะจัดที่เมือง*** ว่าอย่างไงครับ?
+  character: npc_03
+- msg: จะมาถึงในอีกสองสัปดาห์ข้างหน้าครับ แล้วก็สถานที่จัดงาน จะประกาศในอีกสองสามวันครับ
+  character: Suale_01
+- msg: เจอกันนะครับ!!
+  character: Suale_01
+- shake: center
+- msg: กรี๊ดดดดดดดดดด!!!
+  character: default
+- cg: empty
+- character: me
+  act: shock
+  position: center
+- msg: -----ปิดทีวี-----
+  character: default
+- msg: ทันทีที่คนในจอสีเหลี่ยมพูดจบนั้น
+  character: default
+- msg: ภาพทุกอย่างก็ถูกปิดลงด้วยฝีมือใครบางคน
+  character: default
+- character: Marcus_01
+  act: idle
+  position: right
+- msg: นี่ดึกมากแล้วนะ เตรียมไปนอนกันได้แล้ว
+  character: Marcus_01
+- goto: 
+    - ch1_04_marcus_p_con if var_marcus_score > 0
+    - ch1_04_marcus_0p_con
+
+- character: Marcus_01
+  act: idle
+  position: right
+  label: ch1_04_marcus_p_con
+- msg: "{me}ระวังจะป่วยเอานะ อากาศเริ่มจะเย็นมากแล้ว"        #ใส่ชื่อของผู้เล่น
+  character: Marcus_01
+- msg: เขาพูดโดยไม่มองหน้าของคุณ ก่อนที่เขาจะเดินออกไปอย่างเงียบๆ
+  character: default
+- character: me
+  act: idle
+  position: center
+- msg: เอ๋...?
+  character: default
+- goto: end_ch1_day1
+
+- character: me
+  act: worry
+  position: center
+  label: ch1_04_marcus_0p_con
+- msg: มาร์คัสพูดจบเขาก็เดินออกไปทันที ไม่แม้จะหันมาดูปฎิกริยาของคุณ
+  character: default
+- msg: ทำไมเขาถึงเย็นชากับเราจัง..
+  character: default
+- goto: end_ch1_day1
+
+  
+
+- msg: จบตอน
+  character: default
+  label: end_ch1_day1
+
+
+
+#------------- End Day 1 ---------------
